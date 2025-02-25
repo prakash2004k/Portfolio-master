@@ -90,7 +90,7 @@ function Projects() {
             />
           </Col>
 
-          {/* Project 6 */}
+        
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={project6Image}
