@@ -1,0 +1,79 @@
+@keyframes buttonGlow {
+    0% {
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .animated-button {
+    background: linear-gradient(45deg, #007bff, #00d4ff, #007bff);
+    background-size: 200% 200%;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    animation: buttonGlow 1.5s infinite alternate, gradientBG 3s ease infinite;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animated-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #00d4ff, #007bff, #00d4ff);
+  }
+  
+  .animated-button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  .animated-button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .animated-button:hover::after {
+    opacity: 1;
+  }
+  
