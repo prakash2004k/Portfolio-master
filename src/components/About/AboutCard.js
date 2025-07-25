@@ -11,7 +11,7 @@ function AboutCard() {
             Hi Everyone, I am <span className="purple">PRAKASH K</span>
             from <span className="purple"> COIMBATORE, India.</span>
             <br />
-            I am currently pursuing BE CSE (3rd year) at sri shakthi Institute of engineering and technology.
+            I am currently pursuing BE CSE (4th year) at sri shakthi Institute of engineering and technology.
             <br />
             <br />
             Apart from coding, some other activities that I love to do!
