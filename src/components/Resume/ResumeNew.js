@@ -7,7 +7,7 @@ import Particle from "../Particle";
 import pdf from "../../Assets/Prakash_Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css"; // For PDF styling
 
 // Configure PDF.js worker
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -67,6 +67,12 @@ function ResumeNew() {
           </Col>
         </Row>
       </Container>
+
+      {/* Watermark Text */}
+      <div className="watermark">
+        Designed and Developed by PRAKASH<br />
+        © 2025 Prakash
+      </div>
     </div>
   );
 }
