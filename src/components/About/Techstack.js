@@ -1,33 +1,17 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { CgCloud, CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
   DiReact,
   DiNodejs,
   DiMongodb,
   DiPython,
-  DiGit,
   DiJava,
-  DiAndroid,
-  DiAws,
   DiMysql,
   DiHtml5,
   DiCss3,
 } from "react-icons/di";
-import {
-  SiRedis,
-  SiFirebase,
-  SiNextdotjs,
-  SiSolidity,
-  SiPostgresql,
-  SiAwslambda,
-  SiAzuredevops,
-  SiAmazonaws,
-  SiMicrosoftazure,
-  SiGooglecloud,
-} from "react-icons/si";
-import { TbBrandGolang } from "react-icons/tb";
+import { SiAmazonaws, SiGooglecloud } from "react-icons/si";
 
 function Techstack() {
   return (
@@ -57,10 +41,10 @@ function Techstack() {
         <DiMongodb />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiAmazonaws/>
+        <SiAmazonaws />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiGooglecloud/>
+        <SiGooglecloud />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiPython />

@@ -2,13 +2,10 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import ParticlesBackground from "../ParticlesBackground"; // ✅ Correct import
+import ParticlesBackground from "../ParticlesBackground";
 
-// ✅ Import images properly
-import project1Image from "../../Assets/Projects/project11.jpg";
+// ✅ Only keep used images
 import project2Image from "../../Assets/Projects/project22.jpg";
-import project3Image from "../../Assets/Projects/project11.jpg";
-import project4Image from "../../Assets/Projects/project22.jpg";
 import project5Image from "../../Assets/Projects/project11.jpg";
 import project6Image from "../../Assets/Projects/project22.jpg";
 import port from "../../Assets/Projects/port.jpg";
@@ -18,7 +15,7 @@ import sie from "../../Assets/Projects/sie.jpg";
 function Projects() {
   return (
     <Container fluid className="project-section">
-      <ParticlesBackground /> {/* ✅ Particle effect */}
+      <ParticlesBackground />
       <Particle />
       <Container>
         <h1 className="project-heading">
@@ -27,8 +24,8 @@ function Projects() {
         <p style={{ color: "white" }}>
           Here are a few projects I've worked on recently.
         </p>
+
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {/* Project 1 */}
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={sate}
@@ -40,7 +37,6 @@ function Projects() {
             />
           </Col>
 
-          {/* Project 2 */}
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={project2Image}
@@ -52,7 +48,6 @@ function Projects() {
             />
           </Col>
 
-          {/* Project 3 */}
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={port}
@@ -66,7 +61,6 @@ function Projects() {
         </Row>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {/* Project 4 */}
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={sie}
@@ -78,7 +72,6 @@ function Projects() {
             />
           </Col>
 
-          {/* Project 5 */}
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={project5Image}
@@ -89,6 +82,7 @@ function Projects() {
               demoLink="https://contact-page-demo.example.com"
             />
           </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={project6Image}
