@@ -1,4 +1,5 @@
 // src/components/Resume/ResumeNew.js
+
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -12,15 +13,19 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const scale = width > 786 ? 1.5 : width > 480 ? 0.85 : 0.6;
+
   return (
-    <div>
-      <Container fluid className="resume-section">
+    <div className="resume-section">
+      <Container fluid>
         <Particle />
 
         {/* Top Download Button */}
@@ -30,8 +35,7 @@ function ResumeNew() {
               variant="primary"
               href={pdf}
               target="_blank"
-              className="w-100"
-              style={{ maxWidth: "250px" }}
+              className="resume-button"
             >
               <AiOutlineDownload /> &nbsp;Download CV
             </Button>
@@ -41,12 +45,11 @@ function ResumeNew() {
         {/* PDF Preview */}
         <Row className="justify-content-center">
           <Col xs={12} md={10} className="text-center">
-            <Document file={pdf} className="d-flex justify-content-center">
-              <Page
-                pageNumber={1}
-                scale={width > 786 ? 1.7 : 0.6}
-              />
-            </Document>
+            <div className="pdf-container">
+              <Document file={pdf}>
+                <Page pageNumber={1} scale={scale} />
+              </Document>
+            </div>
           </Col>
         </Row>
 
@@ -57,8 +60,7 @@ function ResumeNew() {
               variant="primary"
               href={pdf}
               target="_blank"
-              className="w-100"
-              style={{ maxWidth: "250px" }}
+              className="resume-button"
             >
               <AiOutlineDownload /> &nbsp;Download CV
             </Button>

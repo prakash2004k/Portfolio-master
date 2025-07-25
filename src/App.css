@@ -42,3 +42,40 @@
   height: 100%;
   z-index: -1; /* Send background to back */
 }
+/* Resume Section Styling */
+.resume-section {
+  padding: 2rem 1rem;
+  background-color: #0b0c10;
+  min-height: 100vh;
+  color: white;
+  overflow-x: hidden;
+}
+
+.resume-button {
+  width: 100%;
+  max-width: 250px;
+  margin: 10px auto;
+}
+
+/* PDF container */
+.pdf-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.react-pdf__Page {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .resume-button {
+    font-size: 14px;
+  }
+
+  .pdf-container canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
